@@ -34,22 +34,22 @@ public class EditServlet extends HttpServlet {
         EntityManager em = DBUtil.createEntityManager();
 
         // 該当のIDのメッセージ1件のみをデータベースから取得
-        Tasklist t = em.find(Tasklist.class, Integer.parseInt(request.getParameter("id")));
+        Tasklist t1 = em.find(Tasklist.class, Integer.parseInt(request.getParameter("id")));
 
         em.close();
 
         // メッセージ情報とセッションIDをリクエストスコープに登録
-        request.setAttribute("task", t);
+        request.setAttribute("task", t1);
         request.setAttribute("_token", request.getSession().getId());
 
      // メッセージデータが存在しているときのみ
         // メッセージIDをセッションスコープに登録
-        if(t != null) {
-            request.getSession().setAttribute("task_id", t.getId());
+        if(t1 != null) {
+            request.getSession().setAttribute("task_id", t1.getId());
         }
 
         // メッセージIDをセッションスコープに登録
-        request.getSession().setAttribute("task_id", t.getId());
+        request.getSession().setAttribute("task_id", t1.getId());
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tasklists/edit.jsp");
         rd.forward(request, response);
