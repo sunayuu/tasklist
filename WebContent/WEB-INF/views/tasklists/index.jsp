@@ -13,6 +13,7 @@
                 <li>
                     <a href="${pageContext.request.contextPath}/show?id=${t1.id}">
                         <c:out value="${t1.id}" />
+                         <c:out value="${t1.content}"/>
                     </a>
                 </li>
             </c:forEach>
