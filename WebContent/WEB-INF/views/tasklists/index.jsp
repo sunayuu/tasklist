@@ -9,11 +9,11 @@
         </c:if>
         <h2>タスク一覧</h2>
         <ul>
-            <c:forEach var="t1" items="${task}">
+            <c:forEach var="t" items="${task}">
                 <li>
-                    <a href="${pageContext.request.contextPath}/show?id=${t1.id}">
-                        <c:out value="${t1.id}" />
-                         <c:out value="${t1.content}"/>
+                    <a href="${pageContext.request.contextPath}/show?id=${t.id}">
+                        <c:out value="${t.id}" />
+                         <c:out value="${t.content}"/>
                     </a>
                 </li>
             </c:forEach>

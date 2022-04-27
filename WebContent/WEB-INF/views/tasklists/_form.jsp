@@ -10,7 +10,7 @@
     </div>
 </c:if>
 <label for="content">タスク内容</label><br />
-<input type="text" name="content" value="${t1.content}" />
+<input type="text" name="content" value="${task.content}" />
 <br /><br />
 
 <input type="hidden" name="_token" value="${_token}" />
